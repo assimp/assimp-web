@@ -1,0 +1,14 @@
+
+These formats are top-feature requests for Assimp. Some of them are already in the works. Any help, however, is highly appreciated! The best way to contact us is through the assimp-discussions mailing list or through the support forum on our sf.net page.
+
+
+FBX
+IGES/STEP
+StarCraft M3
+
+
+Maybe ..
+
+VRML
+Wings3D
+Anim8or

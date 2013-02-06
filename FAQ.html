@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux (vers 6 November 2007), see www.w3.org" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Open Asset Import Library : Documentation &amp; FAQ</title>
+<meta name="keywords" content="ASSIMP Open Asset Import Library free Open Source 3d Model Import Library C C++ Java MDL X OBJ MD2 MD3 PLY" />
+<meta name="description" content="Open Asset Import Library" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/prototype.js" type="text/javascript">
+</script>
+<script src="js/scriptaculous.js?load=effects,builder" type="text/javascript">
+</script>
+<script src="js/lightbox.js" type="text/javascript">
+</script>
+<style type="text/css">
+/*<![CDATA[*/
+ div.c1 {clear: both;}
+/*]]>*/
+</style>
+</head>
+<body id="hmain_doc">
+<div id="header"></div>
+<!-- end #header -->
+<div id="menu">
+<ul>
+<li><a href="index.html" accesskey="1" title="">Home</a></li>
+<li id="main_features"><a href="main_features.html" accesskey="2" title="">Features</a></li>
+<li id="main_viewer"><a href="main_viewer.html" accesskey="7" title="">Viewer</a></li>
+<li id="main_doc_"><a href="main_doc.html" accesskey="3" title="">Documentation</a></li>
+<li id="main_downloads"><a href="main_downloads.html" accesskey="4" title="">Downloads</a></li>
+<li id="main_license"><a href="main_license.html" accesskey="8" title="">License</a></li>
+<li id="main_contact"><a href="main_contact.html" accesskey="5" title="">Contact</a></li>
+<li id="main_SFNet"><a class="extern" href="http://www.sourceforge.net/projects/assimp" accesskey="9" title=""><em>SF.net</em></a></li>
+</ul>
+</div>
+<!-- end #menu -->
+<div id="content">
+<div class="post_fl" id="posts_fl"><a href="index.html">ASSIMP</a> -&gt; <a href="main_doc.html">Documentation</a> -&gt; FAQ<br />
+<br />
+<h2 class="story">ASSIMP - Frequently Asked Questions (FAQ)</h2>
+<h4>Am I allowed to use the library in a commercial product?</h4>
+<strong>Yes</strong>. ASSIMP is licensed under a modified BSD license. Its contents in just one sentence: you may use the library for free, in commercial or non-commercial applications, but you must include our license with your product and you may not advertise with us.
+<h4>Does ASSIMP depend on D3D(X)?</h4>
+<strong>No</strong>. AssimpView does (it uses D3D9 for rendering). 
+<h4>Is ASSIMP able to export models?</h4>
+<strong>No</strong>. ASSIMP is an <strong>import</strong> library. It is intended to import assets, which have been exported from programs like 3ds max, into game engines or other realtime visualization systems. Normally you won't need to export the assets again. If you really need this feature, your're free to open a branch and start coding.
+<h4>Should I use the <em>-noboost</em> workaround?</h4>
+If boost is not yet a dependency of your application, yes. There's no need to bother yourself with such a huge dependency just because of Assimp (which is a few hundred times smaller than boost). Take care of the limitations: no thread-safety in the logging system and no threading to speed up stuff like computation of normal vectors. However, all loaders and postprocessing steps are available.
+<h4>For which languages is the API provided?</h4>
+The ASSIMP API is provided both as a plain-C interface and as an object-oriented C++ interface, which is the main API. All ports (jAssimp, Assimp.net, ...) and even the C-style API are just wrappers around this interface. Therefore, if your project allows the use of C++, you should use the C++-API.
+<h4>Is this library thread-safe?</h4>
+<strong>Yes</strong>. ASSIMP is completely thread-safe, as long as you create an extra 'Importer' instance for each thread. The C-API and all ports are doing this automatically for you. There are some restrictions regarding thread-safety with the -noboost workaround, don't forget to read the corresponding doc sections!
+<h4>Why is it so slow?</h4>
+Probably because of a excessively-validating STL implementation. There's a section in the documentation which describes how to fine-tune the performance of Microsoft's STL implementation and also another to promote STLport as a good and fast alternative. Oh yes, and try a release build with full optimizations turned on first. 
+<h4>Can I write a new loader for the library?</h4>
+Sure, as long as you're able to write stable code and the format is not too exotic ... We'd highly appreciate any help. Why are you still reading this? Come on, start coding! :-)
+<h4>AssimpView complains about a missing d3dx9_3n.dll</h4>
+The latest DirectX Runtimes should solve the problem. Google is your friend.
+<h4>Are you guys crazy, all perverts or how did you come up with that name?</h4>
+Neither. But we think it's a funny name, although the pun was merely unintentional. Really.
+<h4>Who are you, the guys behind this library?</h4>
+We are mostly professional software developers from Germany, but not in GameDev business. It's just a hobby. So far we have not much spare time. Any assistance (e.g. new loaders, bugfixes) is highly appreciated.</div>
+<br/>
+<br/>
+<hr />
+<br/>
+<a href="http://sourceforge.net/projects/assimp"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=226462&amp;type=10" width="80" height="15" alt="Get Open Asset Import Library at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a>
+<div class="c1"> </div>
+</div>
+<!-- end #content -->
+<div id="footer">
+<p id="legal">© 2007-2009 Assimp Development Team. All rights reserved. Valid XHTML 1.0 and CSS 2.1.
+</p>
+</div>
+<!-- end #footer -->
+</body>
+</html>

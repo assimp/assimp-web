@@ -1,0 +1,79 @@
+﻿ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy for Linux (vers 6 November 2007), see www.w3.org" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Open Asset Import Library : Documentation &amp; FAQ</title>
+<meta name="keywords" content="ASSIMP Open Asset Import Library free Open Source 3d Model Import Library C C++ Java MDL X OBJ MD2 MD3 PLY" />
+<meta name="description" content="Open Asset Import Library" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="js/prototype.js" type="text/javascript">
+</script>
+<script src="js/scriptaculous.js?load=effects,builder" type="text/javascript">
+</script>
+<script src="js/lightbox.js" type="text/javascript">
+</script>
+<style type="text/css">
+/*<![CDATA[*/
+ div.c1 {clear: both;}
+/*]]>*/
+</style>
+</head>
+<body id="hmain_doc">
+<div id="header"></div>
+<!-- end #header -->
+<div id="menu">
+<ul>
+<li><a href="index.html" accesskey="1" title="">Home</a></li>
+<li id="main_features"><a href="main_features.html" accesskey="2" title="">Features</a></li>
+<li id="main_viewer"><a href="main_viewer.html" accesskey="7" title="">Viewer</a></li>
+<li id="main_doc_"><a href="main_doc.html" accesskey="3" title="">Documentation</a></li>
+<li id="main_downloads"><a href="main_downloads.html" accesskey="4" title="">Downloads</a></li>
+<li id="main_license"><a href="main_license.html" accesskey="8" title="">License</a></li>
+<li id="main_contact"><a href="main_contact.html" accesskey="5" title="">Contact</a></li>
+<li id="main_SFNet"><a href="http://www.sourceforge.net/projects/assimp" accesskey="9" title=""><em>SF.net</em></a></li>
+</ul>
+</div>
+<!-- end #menu -->
+<div id="content">
+<div class="post_fl" id="posts_fl"><a href="index.html">ASSIMP</a> -&gt; <a href="main_doc.html">Documentation</a> -&gt; How to: load basic shapes<br />
+<br />
+<h2 class="title">How to get basic shapes (sphere, cube, ...) easily</h2>
+<p>You can simply use the NFF (Neutral File Format) for this task. NFF is quite a simple, text-based format that allows you to create spheres, cones and cylinders with just a single line. To get a sphere with position (x,y,z) and radius r, use a file with this contents:</p>
+<p><strong>testsphere.nff</strong><tt><br />
+<br />
+--- begin of file<br />
+s x y z r<br />
+--- end of file<br /></tt></p>
+The full specification of the NFF format can be found <a href="http://tog.acm.org/resources/SPD/NFF.TXT">here</a>. However, ASSIMP extends this specification and supports more basic shapes, including all platonic solids ('#' starts a comment line):
+<p><strong>testplatonicsolids.nff</strong><tt><br />
+<br />
+--- begin of file<br />
+# A tetrahedron at -10 0 0 with a 'radius' of 2<br />
+tet -10 0 0 2<br />
+# A cube at -7 0 0 with a 'radius' (a/2) of 2<br />
+hex -7 0 0 2<br />
+# An octahedron at -4 0 0 with a 'radius' of 2<br />
+hex -4 0 0 2<br />
+# A dodecahedron at -1 0 0 with a 'radius' (a/2) of 2<br />
+hex -1 0 0 2<br />
+# An icosahedron at 2 0 0 with a 'radius' (a/2) of 2<br />
+# This is a non-tesselated sphere. 'tess' sets the number of subdivisions.<br />
+# The default value for spheres is 4.<br />
+tess 0 s 2 0 0 2<br />
+--- end of file<br /></tt> (the 'radius' is the radius of the respective circumscribed sphere)
+</p>
+
+<a href="http://sourceforge.net/projects/assimp"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=226462&amp;type=10" width="80" height="15" alt="Get Open Asset Import Library at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a>
+</div>
+</div>
+<div class="c1"> </div>
+<!-- end #content -->
+<div id="footer">
+<p id="legal">© 2007-2009 Assimp Development Team. All rights reserved. Valid XHTML 1.0 and CSS 2.1.</p>
+</div>
+<!-- end #footer -->
+</body>
+</html>
+
