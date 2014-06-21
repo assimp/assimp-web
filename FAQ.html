@@ -45,7 +45,7 @@
 <h4>Does ASSIMP depend on D3D(X)?</h4>
 <strong>No</strong>. AssimpView does (it uses D3D9 for rendering). 
 <h4>Is ASSIMP able to export models?</h4>
-<strong>No</strong>. ASSIMP is an <strong>import</strong> library. It is intended to import assets, which have been exported from programs like 3ds max, into game engines or other realtime visualization systems. Normally you won't need to export the assets again. If you really need this feature, your're free to open a branch and start coding.
+<strong>Yes</strong> (as of 2013). Due to popular demand, assimp now supports an export API that is similar to the import side. Supported file formats include Obj, X, Collada, STL and more.
 <h4>Should I use the <em>-noboost</em> workaround?</h4>
 If boost is not yet a dependency of your application, yes. There's no need to bother yourself with such a huge dependency just because of Assimp (which is a few hundred times smaller than boost). Take care of the limitations: no thread-safety in the logging system and no threading to speed up stuff like computation of normal vectors. However, all loaders and postprocessing steps are available.
 <h4>For which languages is the API provided?</h4>
@@ -57,11 +57,11 @@ Probably because of a excessively-validating STL implementation. There's a secti
 <h4>Can I write a new loader for the library?</h4>
 Sure, as long as you're able to write stable code and the format is not too exotic ... We'd highly appreciate any help. Why are you still reading this? Come on, start coding! :-)
 <h4>AssimpView complains about a missing d3dx9_3n.dll</h4>
-The latest DirectX Runtimes should solve the problem. Google is your friend.
-<h4>Are you guys crazy, all perverts or how did you come up with that name?</h4>
-Neither. But we think it's a funny name, although the pun was merely unintentional. Really.
+The latest DirectX Runtimes should solve the problem. 
+<h4>Are you guys crazy or how did you come up with that name?</h4>
+We think it's a good name, although the pun was merely unintentional. Really.
 <h4>Who are you, the guys behind this library?</h4>
-We are mostly professional software developers from Germany, but not in GameDev business. It's just a hobby. So far we have not much spare time. Any assistance (e.g. new loaders, bugfixes) is highly appreciated.</div>
+We are mostly professional software engineers, but not in the games industry. It's just a hobby. So far we have not much spare time. Any assistance (e.g. new loaders, bugfixes) is highly appreciated.</div>
 <br/>
 <br/>
 <hr />
